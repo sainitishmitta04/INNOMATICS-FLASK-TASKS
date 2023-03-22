@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Regex Tester</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div id="container">
+      <h1>Regex Clone</h1>
+      <form method="POST">
+        <label for="test_string">Test String:</label>
+        <input type="text" id="test_string" name="test_string" placeholder="Enter the String to test:">
+        
+        <label for="regex_pattern">Regular Expression:</label>
+        <input type="text" id="regex_pattern" name="regex_pattern" placeholder="Enter the Regular Expression here:">
+       
+        <button type="submit">Submit</button>
+      </form>
+      <br>
+
+
+      {% if matches %}
+      <h3>Matches:</h3>
+      <ul>
+        {% for match in matches %}
+        <li>{{ (match) }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+
+
+    </div>
+  </body>
+</html>
