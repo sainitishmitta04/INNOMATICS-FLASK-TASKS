@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}URL Shortener{% endblock %}
+
+{% block content %}
+<center>
+    <h1>URL Shortener</h1>
+    <br>
+    <form action="/" , method="post">
+        <label for="url_link">Paste the URL to be Shortened</label>
+        <br><br>
+        <input type="url" name="url_link" id="url_link" placeholder="https://domain.com" size="50">
+        <br><br>
+        <input type="submit" value="Shorten URL" class="bt">
+    </form>
+    <br>
+    {% if short_url_display %}
+    <h2>Short URL is Generated</h2>
+    <br>
+    <h4>Short URL: http://127.0.0.1:5000/{{short_url_display}}</h4>
+    <br>
+    <h4>Click here: <a href="http://127.0.0.1:5000/{{short_url_display}}">http://127.0.0.1:5000/{{short_url_display}}</a></h4>
+
+
+
+    {% endif %}
+</center>
+{% endblock %}
